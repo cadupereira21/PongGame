@@ -6,7 +6,7 @@ public abstract class masterPlayerController : MonoBehaviour
     protected Rigidbody2D player;
 
     [SerializeField]
-    [Range(0.1f, 50f)]
+    [Range(0.1f, 100f)]
     protected float moveForce = 5f;
 
     [SerializeField]
@@ -14,7 +14,7 @@ public abstract class masterPlayerController : MonoBehaviour
     protected float maxSpeed = 5f;
 
     [SerializeField]
-    [Range(0.1f, 100f)]
+    [Range(0.1f, 10f)]
     float brakeForce;
 
     float horizontalSpeed;

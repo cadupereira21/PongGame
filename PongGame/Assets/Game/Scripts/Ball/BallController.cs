@@ -27,7 +27,7 @@ public class BallController : MonoBehaviour
     {
         ball = GetComponent<Rigidbody2D>();
 
-        MoveRandomly();
+        StartCoroutine(MoveRandomly());
     }
 
     // Update is called once per frame
@@ -36,11 +36,14 @@ public class BallController : MonoBehaviour
         
     }
 
-    private void MoveRandomly()
+    public IEnumerator MoveRandomly()
     {
+        Debug.Log("Estou aqui");
         directions = Random.Range(0, 5);
         horizontalSpeed = Random.Range(minimumForce, maxForce);
         verticalSpeed = Random.Range(minimumForce, maxForce);
+
+        yield return new WaitForSeconds(3);
 
         if (directions > 3)
         {
@@ -55,5 +58,13 @@ public class BallController : MonoBehaviour
         {
             ball.AddForce(new Vector2(-horizontalSpeed * 10, -verticalSpeed * 10));
         }
+    }
+
+    public void ResetBall()
+    {
+        StopAllCoroutines();
+        this.transform.position = new Vector3(0, 0, 0);
+        ball.velocity = new Vector2(0, 0);
+        StartCoroutine(MoveRandomly());
     }
 }
