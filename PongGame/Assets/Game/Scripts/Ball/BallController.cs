@@ -1,0 +1,59 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BallController : MonoBehaviour
+{
+    Rigidbody2D ball;
+
+    [SerializeField]
+    [Range(5f, 50f)]
+    float maxForce = 20f;
+
+    [SerializeField]
+    [Range(0.1f, 50f)]
+    float minimumForce = 19f;
+
+    float horizontalSpeed;
+    float verticalSpeed;
+    float directions;
+
+//    [SerializeField]
+ //   [Range(0.1f, 50f)]
+   // float maxSpeed = 5f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        ball = GetComponent<Rigidbody2D>();
+
+        MoveRandomly();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        
+    }
+
+    private void MoveRandomly()
+    {
+        directions = Random.Range(0, 5);
+        horizontalSpeed = Random.Range(minimumForce, maxForce);
+        verticalSpeed = Random.Range(minimumForce, maxForce);
+
+        if (directions > 3)
+        {
+            ball.AddForce(new Vector2(horizontalSpeed * 10, verticalSpeed * 10));
+        } else if (directions > 2)
+        {
+            ball.AddForce(new Vector2(-horizontalSpeed * 10, verticalSpeed * 10));
+        } else if (directions > 1)
+        {
+            ball.AddForce(new Vector2(horizontalSpeed * 10, -verticalSpeed * 10));
+        } else
+        {
+            ball.AddForce(new Vector2(-horizontalSpeed * 10, -verticalSpeed * 10));
+        }
+    }
+}
