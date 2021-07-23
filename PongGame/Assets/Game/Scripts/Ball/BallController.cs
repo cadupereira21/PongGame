@@ -38,7 +38,6 @@ public class BallController : MonoBehaviour
 
     public IEnumerator MoveRandomly()
     {
-        Debug.Log("Estou aqui");
         directions = Random.Range(0, 5);
         horizontalSpeed = Random.Range(minimumForce, maxForce);
         verticalSpeed = Random.Range(minimumForce, maxForce);

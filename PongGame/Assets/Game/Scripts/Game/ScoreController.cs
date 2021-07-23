@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
@@ -8,17 +9,20 @@ public class ScoreController : MonoBehaviour
     private int leftPlayerScore = 0;
     public bool hasEnteredTrigger { get; private set; } = false;
 
+    public Text leftScoreLabel;
+    public Text rightScoreLabel;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("RightScore"))
         {
-            Debug.Log("Ponto do player esquerdo!");
-            leftPlayerScore++;
+            ++leftPlayerScore;
+            leftScoreLabel.text = leftPlayerScore.ToString();
         }
         if (collision.CompareTag("LeftScore"))
         {
-            Debug.Log("Ponto do player direito!");
-            rightPlayerScore++;
+            ++rightPlayerScore;
+            rightScoreLabel.text = rightPlayerScore.ToString();
         }
 
         hasEnteredTrigger = true;
