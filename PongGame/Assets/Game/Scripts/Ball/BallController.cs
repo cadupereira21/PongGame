@@ -18,10 +18,6 @@ public class BallController : MonoBehaviour
     float verticalSpeed;
     float directions;
 
-//    [SerializeField]
- //   [Range(0.1f, 50f)]
-   // float maxSpeed = 5f;
-
     // Start is called before the first frame update
     void Start()
     {
