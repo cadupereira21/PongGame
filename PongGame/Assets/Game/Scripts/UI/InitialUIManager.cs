@@ -10,6 +10,11 @@ public class InitialUIManager : MonoBehaviour
         SceneManager.LoadScene("Multiplayer");
     }
 
+    public void PlaySingleplayerMode()
+    {
+        SceneManager.LoadScene("Singleplayer");
+    }
+
     public void QuitGame() 
     {
         Debug.Log("Quiting!");

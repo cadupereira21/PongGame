@@ -38,7 +38,7 @@ public class BallController : MonoBehaviour
         horizontalSpeed = Random.Range(minimumForce, maxForce);
         verticalSpeed = Random.Range(minimumForce, maxForce);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(GameController.ballWaitingNumber);
 
         if (directions > 3)
         {
