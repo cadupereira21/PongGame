@@ -16,3 +16,9 @@ to be a problem :')
     I changed the "Options" button on the Initial Menu to a "Controls" button, where I display the controls used in the game.
     I also added the scene for the Singleplayer part of the game, but I still think it will be a challenge to implement an AI for it, but that's what I'll try next day.
 Actually, I think i will take my today's free time searching it in the internet, maybe I can find some help hauhahua. 
+
+# Day 5 - 30/07/2021
+
+    Today I implemented the AI for the singleplayer, but still need some improvement. I also want to put difficulty levels by changing the velocity and lerp of the AI
+(it is already implemented at the UI).
+    I also implemented the settings menu, with graphics, fullscreen toggle and difficulty levels.

@@ -42,7 +42,7 @@ public abstract class masterPlayerController : MonoBehaviour
             player.AddForce(new Vector2(0, moveForce * UpOrDown + Time.fixedDeltaTime));
     }
 
-    protected void ApplyBrake()
+    public void ApplyBrake()
     {
         var velocity = player.velocity;
         velocity.y = Mathf.Lerp(velocity.y, 0.0f, brakeForce * Time.deltaTime);
