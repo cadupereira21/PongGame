@@ -22,3 +22,10 @@ Actually, I think i will take my today's free time searching it in the internet,
     Today I implemented the AI for the singleplayer, but still need some improvement. I also want to put difficulty levels by changing the velocity and lerp of the AI
 (it is already implemented at the UI).
     I also implemented the settings menu, with graphics, fullscreen toggle and difficulty levels.
+
+# Day 6 - 02/08/2021
+
+  Today I implemented the difficulty system :) at first I didn't know how to implement it, thought that using events would work, but I could not make it happen, so I
+implemented in the simplest way I could.
+    I would like to start the audio system today (putting some music for the buttons and menus, and for the gameplay) but my head is full, i'm just gonna rest,
+university is starting next week, as well the game jam i'm going to participate :)

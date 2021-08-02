@@ -1743,6 +1743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theBall: {fileID: 1288399854}
+  gameController: {fileID: 85263}
+  settingsMenu: {fileID: 1386975906}
   speed: 60
   lerpSpeed: 0.35
 --- !u!1 &488051107
@@ -3867,7 +3869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1386975903
 MonoBehaviour:
   m_ObjectHideFlags: 0

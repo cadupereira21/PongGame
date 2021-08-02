@@ -5,17 +5,21 @@ using UnityEngine;
 public class SingleplayerAI : MonoBehaviour
 {
     public GameObject theBall;
+    public GameController gameController;
+    public SettingsMenu settingsMenu;
 
-    [SerializeField] float speed = 30;
-    [SerializeField] float lerpSpeed = 1f;
+    float speed;
+    float lerpSpeed;
     Rigidbody2D rigidBody;
 
-    void Start()
+    public void Start()
     {
+        OnDifficultyChange();
         rigidBody = GetComponent<Rigidbody2D>();
+        settingsMenu.DifficultyChange += OnDifficultyChange;
     }
 
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         if (theBall.transform.position.y > transform.position.y)
         {
@@ -31,7 +35,34 @@ public class SingleplayerAI : MonoBehaviour
         }
         else
         {
-            rigidBody.velocity = Vector2.Lerp(rigidBody.velocity, Vector2.zero * speed, lerpSpeed * Time.fixedDeltaTime);
+            //rigidBody.velocity = Vector2.Lerp(rigidBody.velocity, Vector2.zero * speed, lerpSpeed * Time.fixedDeltaTime);
+        }
+    }
+
+    private void OnDifficultyChange()
+    {
+        switch (gameController.difficulty)
+        {
+            case 0:
+                speed = 60f;
+                lerpSpeed = 0.35f;
+                break;
+            case 1:
+                speed = 65f;
+                lerpSpeed = 0.45f;
+                break;
+            case 2:
+                speed = 75f;
+                lerpSpeed = 0.50f;
+                break;
+        }
+    }
+
+    private void DifficultyHasChanged()
+    {
+        if(settingsMenu != null)
+        {
+            settingsMenu.DifficultyChange -= OnDifficultyChange;
         }
     }
 }
