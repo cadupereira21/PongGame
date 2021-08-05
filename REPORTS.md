@@ -29,3 +29,8 @@ Actually, I think i will take my today's free time searching it in the internet,
 implemented in the simplest way I could.
     I would like to start the audio system today (putting some music for the buttons and menus, and for the gameplay) but my head is full, i'm just gonna rest,
 university is starting next week, as well the game jam i'm going to participate :)
+
+# Day 7 - 05/08/2021
+
+  Today I implemented all the audio you can find in the game. The only thing left to do is improve my code and create the art. I'm thinking of learning to deal with
+shaders and the particle system, let's see what I can do :)

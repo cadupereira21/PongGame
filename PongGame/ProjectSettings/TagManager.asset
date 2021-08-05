@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RightScore
   - LeftScore
+  - Constraint
   layers:
   - Default
   - TransparentFX

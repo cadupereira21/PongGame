@@ -18,11 +18,13 @@ public class ScoreController : MonoBehaviour
         {
             ++leftPlayerScore;
             leftScoreLabel.text = leftPlayerScore.ToString();
+            FindObjectOfType<AudioManager>().Play(GameSounds.scoreHit);
         }
         if (collision.CompareTag("LeftScore"))
         {
             ++rightPlayerScore;
             rightScoreLabel.text = rightPlayerScore.ToString();
+            FindObjectOfType<AudioManager>().Play(GameSounds.scoreHit);
         }
 
         hasEnteredTrigger = true;

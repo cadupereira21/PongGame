@@ -11,16 +11,19 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetGraphics(int graphicsIndex)
     {
+        FindObjectOfType<AudioManager>().Play(GameSounds.ButtonClick);
         QualitySettings.SetQualityLevel(graphicsIndex);
     }
 
     public void SetFullscreen (bool isFullscren)
     {
+        FindObjectOfType<AudioManager>().Play(GameSounds.ButtonClick);
         Screen.fullScreen = isFullscren;
     }
 
     public void SetDifficulty(int difficultyIndex)
     {
+        FindObjectOfType<AudioManager>().Play(GameSounds.ButtonClick);
         if (gameController.isSingleplayer) {
             gameController.difficulty = difficultyIndex;
             DifficultyChange.Invoke();
@@ -34,6 +37,7 @@ public class SettingsMenu : MonoBehaviour
 
     private void ShowErrorMessage()
     {
+        FindObjectOfType<AudioManager>().Play(GameSounds.ButtonClick);
         difficultyErrorMessage.SetActive(true);
     }
 }
